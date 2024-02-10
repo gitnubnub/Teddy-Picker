@@ -6,4 +6,4 @@ This is a silly little project intended to help me pick a playlist on Spotify be
 - time input in hours and minutes
 - better handling of playlists that are equally close to the average (AKA usually same length)
 - perhaps some other choosing functions like shortest/longest etc. (not sure how useful that is)
-- ~~integration with the Spotify API~~ idek how that stuff works tho but a girl can dream :')
+- ~~integration with the Spotify API~~ idek how that stuff works but a girl can dream :')
