@@ -41,21 +41,24 @@ public class TeddyPicker {
 
 		submitNo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int number = 0;
+				int number = Integer.parseInt(noOfPlaylists.getText());
 
 				try {
 					if (number > 0) {
-						number = Integer.parseInt(noOfPlaylists.getText());
 						inputScreen(panel, number);
 					} else {
 						final JLabel error = new JLabel("Invalid input, please enter a number higher than zero!");
 						error.setBounds(180, 200, 200, 30);
 						panel.add(error);
+						panel.revalidate();
+						panel.repaint();
 					}
 				} catch (NumberFormatException ex) {
 					final JLabel error = new JLabel("Invalid input, please enter a number higher than zero!");
 					error.setBounds(180, 200, 200, 30);
 					panel.add(error);
+					panel.revalidate();
+					panel.repaint();
 				}
 			}
 		});
@@ -109,10 +112,14 @@ public class TeddyPicker {
 			if (lengths[i] > 0) {
 				sum += lengths[i];
 			}
+
+			panel.revalidate();
+			panel.repaint();
 		}
 
 		final int summ = sum;
 
+		panel.removeAll();
 		JButton submit = new JButton("Not quick enough, can I have it quicker?");
 		submit.setBounds(180, 160, 200, 30);
 		submit.addActionListener(new ActionListener() {
